@@ -3,7 +3,6 @@ package cz.educanet;
 import java.util.Comparator;
 
 public class ArrayWrapper implements IArrayWrapper {
-
     private final int[] array;
 
     public ArrayWrapper(int[] array) {
@@ -12,37 +11,55 @@ public class ArrayWrapper implements IArrayWrapper {
 
     @Override
     public int get(int index) throws ArrayIndexOutOfBoundsException {
-        return 0;
+        return array[index];
     }
 
     @Override
     public int getFirst() {
-        return 0;
+        return array[0];
     }
 
     @Override
     public int getLast() {
-        return 0;
+        return array[array.length - 1];
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return array.length;
     }
 
     @Override
     public IArrayWrapper append(int item) {
-        return null;
+        int[] newArray = new int[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        newArray[newArray.length - 1] = item;
+        return new ArrayWrapper(newArray);
     }
 
     @Override
     public IArrayWrapper prepend(int item) {
-        return null;
+        int[] newArray = new int[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i + 1] = array[i];
+        }
+        newArray[0] = item;
+        return new ArrayWrapper(newArray);
     }
 
     @Override
     public IArrayWrapper remove(int item) {
-        return null;
+        for (int i = 0; i < array.length - 1; i++) {
+            int iMin = i;
+            for (int j = 0; j < array.length; j++) {
+                if (array[j] < array[iMin]) {
+                    iMin = j;
+                }
+            }
+        }
+        return new ArrayWrapper(array);
     }
 
     @Override
