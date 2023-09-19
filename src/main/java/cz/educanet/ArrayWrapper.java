@@ -2,27 +2,27 @@ package cz.educanet;
 
 import java.util.Comparator;
 
-public class ArrayWrapper<T> implements IArrayWrapper<T> {
+public class ArrayWrapper implements IArrayWrapper {
 
-    private final T[] array;
+    private final int[] array;
 
-    public ArrayWrapper(T[] array) {
+    public ArrayWrapper(int[] array) {
         this.array = array;
     }
 
     @Override
-    public T get(int index) throws ArrayIndexOutOfBoundsException {
-        return null;
+    public int get(int index) throws ArrayIndexOutOfBoundsException {
+        return 0;
     }
 
     @Override
-    public T getFirst() {
-        return null;
+    public int getFirst() {
+        return 0;
     }
 
     @Override
-    public T getLast() {
-        return null;
+    public int getLast() {
+        return 0;
     }
 
     @Override
@@ -31,42 +31,42 @@ public class ArrayWrapper<T> implements IArrayWrapper<T> {
     }
 
     @Override
-    public IArrayWrapper<T> append(T item) {
+    public IArrayWrapper append(int item) {
         return null;
     }
 
     @Override
-    public IArrayWrapper<T> prepend(T item) {
+    public IArrayWrapper prepend(int item) {
         return null;
     }
 
     @Override
-    public IArrayWrapper<T> remove(T item) {
+    public IArrayWrapper remove(int item) {
         return null;
     }
 
     @Override
-    public IArrayWrapper<T> sort() {
+    public IArrayWrapper sort() {
         return null;
     }
 
     @Override
-    public IArrayWrapper<T> bogoSort() {
+    public IArrayWrapper bogoSort() {
         return null;
     }
 
     @Override
-    public T maxBy(Comparator<T> comparator) {
-        return null;
+    public int max() {
+        return 0;
     }
 
     @Override
-    public T minBy(Comparator<T> comparator) {
-        return null;
+    public int min() {
+        return 0;
     }
 
     @Override
-    public T[] getRaw() {
+    public int[] getRaw() {
         return array;
     }
 }

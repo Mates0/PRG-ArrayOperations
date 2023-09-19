@@ -2,7 +2,7 @@ package cz.educanet;
 
 import java.util.Comparator;
 
-public interface IArrayWrapper<T> {
+public interface IArrayWrapper {
 
      /**
       * Attempts to get element on the given index
@@ -11,21 +11,21 @@ public interface IArrayWrapper<T> {
       * @return item
       * @throws ArrayIndexOutOfBoundsException If index is out of bounds
       */
-     T get(int index) throws ArrayIndexOutOfBoundsException;
+     int get(int index) throws ArrayIndexOutOfBoundsException;
 
      /**
       * Returns first element
       *
       * @return first item
       */
-     T getFirst();
+     int getFirst();
 
      /**
       * Returns last element
       *
       * @return last item
       */
-     T getLast();
+     int getLast();
 
      /**
       * Returns number of elements
@@ -40,7 +40,7 @@ public interface IArrayWrapper<T> {
       * @param item Item to append
       * @return new array with the appended item
       */
-     IArrayWrapper<T> append(T item);
+     IArrayWrapper append(int item);
 
      /**
       * Resizes and prepends an item at the end of the array
@@ -48,7 +48,7 @@ public interface IArrayWrapper<T> {
       * @param item Item to prepend
       * @return new array with the prepended item
       */
-     IArrayWrapper<T> prepend(T item);
+     IArrayWrapper prepend(int item);
 
      /**
       * Removes first found item from the array
@@ -56,7 +56,7 @@ public interface IArrayWrapper<T> {
       * @param item Item to remove
       * @return new array without the passed item
       */
-     IArrayWrapper<T> remove(T item);
+     IArrayWrapper remove(int item);
 
      /**
       * Sorts the items in the array using the
@@ -64,7 +64,7 @@ public interface IArrayWrapper<T> {
       *
       * @return new sorted array
       */
-     IArrayWrapper<T> sort();
+     IArrayWrapper sort();
 
      /**
       * Sorts the items in the array using the
@@ -72,28 +72,26 @@ public interface IArrayWrapper<T> {
       *
       * @return new sorted array
       */
-     IArrayWrapper<T> bogoSort();
+     IArrayWrapper bogoSort();
 
      /**
       * Finds maximal element in the array
       *
-      * @param comparator Comparator
       * @return Maximal element
       */
-     T maxBy(Comparator<T> comparator);
+     int max();
 
      /**
       * Finds minimal element in the array
       *
-      * @param comparator Comparator
       * @return Minimal element
       */
-     T minBy(Comparator<T> comparator);
+     int min();
 
      /**
       * Returns raw array wrapped by this class/interface
       *
       * @return Raw array
       */
-     T[] getRaw();
+     int[] getRaw();
 }
