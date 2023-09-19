@@ -32,7 +32,7 @@ public interface IArrayWrapper<T> {
       *
       * @return number of elements
       */
-     T getCount();
+     int getCount();
 
      /**
       * Resizes and appends at the end of the array

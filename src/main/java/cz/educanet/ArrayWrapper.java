@@ -26,8 +26,8 @@ public class ArrayWrapper<T> implements IArrayWrapper<T> {
     }
 
     @Override
-    public T getCount() {
-        return null;
+    public int getCount() {
+        return 0;
     }
 
     @Override
